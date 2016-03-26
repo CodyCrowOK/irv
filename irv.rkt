@@ -34,12 +34,6 @@
       (max-position (tally-round ballots))
       (count-votes (remove-loser ballots))))
 
-;(define (remove-loser ballots)
-;  (map (lambda (xs)
-;         (if (equal? (car xs) (min-position (tally-round ballots)))
-;             (cdr xs)
-;             xs)) ballots))
-
 (define (remove-loser ballots)
   (map remove-head-if-loser ballots `((min-position (tally-round ballots)))))
 
